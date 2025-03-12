@@ -1,0 +1,28 @@
+{
+    "name": "CurlingFrictionWheelV2_MicroBit",
+    "description": "",
+    "dependencies": {
+        "core": "*",
+        "radio": "*",
+        "microphone": "*",
+        "pxt-nezha2": "github:elecfreaks/pxt-nezha2#v1.2.0",
+        "pxt-nezha": "github:elecfreaks/pxt-nezha#v1.3.9",
+        "pxt-PlanetX": "github:elecfreaks/pxt-planetx#v1.5.33"
+    },
+    "files": [
+        "main.blocks",
+        "main.ts",
+        "README.md"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "targetVersions": {
+        "target": "7.0.57",
+        "targetId": "microbit"
+    },
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "blocksprj"
+}
