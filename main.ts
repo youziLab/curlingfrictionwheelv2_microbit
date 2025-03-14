@@ -37,7 +37,6 @@ function 遥控控制 () {
 }
 function 启动初始化 () {
     basic.showIcon(IconNames.Yes)
-    basic.showIcon(IconNames.Yes)
 }
 // 运动模型正解:已知小车线速度、角速度 计算 左右轮的线速度
 // 公式：vl = v+w*l/2
