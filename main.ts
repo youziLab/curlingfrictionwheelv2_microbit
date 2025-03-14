@@ -11,7 +11,7 @@ function 遥控控制 () {
         nezhaV2.start(nezhaV2.MotorPostion.M4, 100)
         局部_内转标记 = 0
     } else {
-        if (局部_内转标记 != 1) {
+        if (局部_内转标记 == 0) {
             nezhaV2.start(nezhaV2.MotorPostion.M3, 0)
             nezhaV2.start(nezhaV2.MotorPostion.M4, 0)
         }
