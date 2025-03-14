@@ -3,12 +3,36 @@ function 常量初始化 () {
     常量_舵机_上臂开角度 = 135
     常量_舵机_上臂关角度 = 45
     常量_推杆时间 = 500
+    最大挡位速度 = 0
     basic.showIcon(IconNames.Chessboard)
 }
 function 遥控控制 () {
     if (PlanetX_Basic.get_Attention_Value(PlanetX_Basic.value_level.Tri)) {
-        nezhaV2.start(nezhaV2.MotorPostion.M3, -100)
-        nezhaV2.start(nezhaV2.MotorPostion.M4, 100)
+        最大挡位速度 = 30
+        nezhaV2.start(nezhaV2.MotorPostion.M3, 最大挡位速度 * -1)
+        nezhaV2.start(nezhaV2.MotorPostion.M4, 最大挡位速度 * 1)
+        局部_内转标记 = 0
+    } else {
+        if (局部_内转标记 == 0) {
+            nezhaV2.start(nezhaV2.MotorPostion.M3, 0)
+            nezhaV2.start(nezhaV2.MotorPostion.M4, 0)
+        }
+    }
+    if (PlanetX_Basic.get_Attention_Value(PlanetX_Basic.value_level.Squ)) {
+        最大挡位速度 = 60
+        nezhaV2.start(nezhaV2.MotorPostion.M3, 最大挡位速度 * -1)
+        nezhaV2.start(nezhaV2.MotorPostion.M4, 最大挡位速度 * 1)
+        局部_内转标记 = 0
+    } else {
+        if (局部_内转标记 == 0) {
+            nezhaV2.start(nezhaV2.MotorPostion.M3, 0)
+            nezhaV2.start(nezhaV2.MotorPostion.M4, 0)
+        }
+    }
+    if (PlanetX_Basic.get_Attention_Value(PlanetX_Basic.value_level.Cir)) {
+        最大挡位速度 = 50
+        nezhaV2.start(nezhaV2.MotorPostion.M3, 最大挡位速度 * -1)
+        nezhaV2.start(nezhaV2.MotorPostion.M4, 最大挡位速度 * 1)
         局部_内转标记 = 0
     } else {
         if (局部_内转标记 == 0) {
@@ -17,8 +41,9 @@ function 遥控控制 () {
         }
     }
     if (PlanetX_Basic.get_Attention_Value(PlanetX_Basic.value_level.X)) {
-        nezhaV2.start(nezhaV2.MotorPostion.M3, 100)
-        nezhaV2.start(nezhaV2.MotorPostion.M4, -100)
+        最大挡位速度 = 50
+        nezhaV2.start(nezhaV2.MotorPostion.M3, 最大挡位速度 * 1)
+        nezhaV2.start(nezhaV2.MotorPostion.M4, 最大挡位速度 * -1)
         局部_内转标记 = 1
     }
 }
@@ -63,6 +88,7 @@ let 速度解算局部_MAX = 0
 let 速度解算局部_v2 = 0
 let 速度解算局部_v1 = 0
 let 局部_内转标记 = 0
+let 最大挡位速度 = 0
 let 常量_推杆时间 = 0
 let 常量_舵机_上臂关角度 = 0
 let 常量_舵机_上臂开角度 = 0
