@@ -9,13 +9,13 @@ function 常量初始化 () {
 }
 function 遥控控制 () {
     if (PlanetX_Basic.get_Attention_Value(PlanetX_Basic.value_level.Tri)) {
-        最大挡位速度 = 100
+        最大挡位速度 = 80
         局部_内转标记 = 0
     } else if (PlanetX_Basic.get_Attention_Value(PlanetX_Basic.value_level.Squ)) {
-        最大挡位速度 = 60
+        最大挡位速度 = 59
         局部_内转标记 = 0
     } else if (PlanetX_Basic.get_Attention_Value(PlanetX_Basic.value_level.Cir)) {
-        最大挡位速度 = 80
+        最大挡位速度 = 63
         局部_内转标记 = 0
     } else {
         if (局部_内转标记 == 0) {
